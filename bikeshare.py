@@ -32,7 +32,7 @@ def get_filters():
 
     """gets user input for month. The loop will stop the user when entering an invalid month until they enter a valid month"""
 
-    months = ['all','1','2','3','4','5','6']
+    months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
     while True:
         try:
             month = input('Specify month (all, 1=january, 2=february, ... , 6=june): ').lower()
@@ -76,7 +76,11 @@ def load_data(city, month, day):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-
+    if month != 'all':
+        months = ['january', 'february', 'march', 'april', 'may', 'june']
+        month = months.index(month) + 1
+        # filter by month to create the new dataframe
+        df = df[df['month'] == month]
 
     return df
 
