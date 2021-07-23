@@ -13,5 +13,6 @@ Analyzes bike share data in New York City, Chicago and Washington. Allows user i
 chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
+Python Udacity course content
 https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
 https://knowledge.udacity.com/questions/621080
